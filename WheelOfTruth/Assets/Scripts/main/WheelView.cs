@@ -4,34 +4,70 @@ using System.Collections;
 public class WheelView : MonoBehaviour 
 {
     public Transform wheelContainer;
+    public int numOfSlots;
     public AnimationCurve curve;
     public int minLap;
     public int maxLap;
     public float maxSpeed;
 
+    // Test
     public UILabel lb;
 
+    private float slotWidth;
     private float curAngle;
+    private float cacheTargetAngle;
+
+    private const int CIRCLE_ANGLE = 360;
     
     private void Awake()
     {
         curAngle = 0;
+
+        // Test
+        Init();
     }
 
-	// Use this for initialization
-	void Start () 
+    public void Init()
     {
-        
-	}
-	
-	// Update is called once per frame
-	void Update () 
+        slotWidth = (float)CIRCLE_ANGLE / numOfSlots;
+    }
+
+    public void SetNumberOfSlots(int numOfSlots)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && curAngle == 0 )
+        this.numOfSlots = numOfSlots;
+
+        Init();
+    }
+
+    // Test
+    public void StartSpin()
+    {
+        StartCoroutine(Roll(GetStep(GetAngle(3))));
+    }
+
+    private int GetAngle(int index)
+    {
+        float _angle = 0;
+        for (int i = 0; i < index; i++)
         {
-            StartCoroutine(Roll(3000));
+            _angle += slotWidth;
         }
-	}
+        Debug.Log(_angle + " -> " + (_angle + slotWidth));
+        _angle += Random.Range(1, slotWidth);
+        Debug.Log(_angle);
+        return (int)_angle;
+    }
+
+    private int GetStep(int angle)
+    {
+        cacheTargetAngle = angle;
+
+        int steps = CIRCLE_ANGLE - (int)curAngle;
+        steps += CIRCLE_ANGLE * Random.Range(minLap, maxLap + 1);
+        steps += angle;
+
+        return steps;
+    }
 
     private IEnumerator Roll(int totalStep)
     {
@@ -63,6 +99,9 @@ public class WheelView : MonoBehaviour
             if (step >= totalStep)
                 break;
         }
+
+        curAngle = cacheTargetAngle;
+        wheelContainer.eulerAngles = new Vector3(0, curAngle, 0);
     }
 
     private float GetStepAngle(float step, int totalSteps)

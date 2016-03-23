@@ -242,26 +242,26 @@ MonoBehaviour:
   curve:
     serializedVersion: 2
     m_Curve:
-    - time: .00535331899
-      value: .704724431
+    - time: -.00192328682
+      value: .798176765
       inSlope: .858914316
       outSlope: .858914316
       tangentMode: 0
-    - time: .502106905
-      value: .939216614
+    - time: .300415516
+      value: 1.00168228
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: 1
-      value: .0039370656
-      inSlope: 0
-      outSlope: 0
+    - time: 1.00064325
+      value: .0178005844
+      inSlope: -.0938915834
+      outSlope: -.0938915834
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-  minLap: 0
-  maxLap: 0
-  maxSpeed: .00999999978
+  minLap: 1
+  maxLap: 2
+  maxSpeed: 12
   lb: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
