@@ -503,7 +503,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.20000005
+  aspectRatio: 2.75
   keepCrispWhenShrunk: 2
   onChangeValue:
     mTarget: {fileID: 0}
@@ -1297,6 +1297,45 @@ MeshFilter:
   m_PrefabInternal: {fileID: 268724542}
   m_GameObject: {fileID: 726392136}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &790657490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 790657492}
+  - 114: {fileID: 790657491}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &790657491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 790657490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3476f6982670e784bb98e2de6ea97c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &790657492
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 790657490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &904274127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,13 +2483,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: .894117653, g: 0, b: .498039216, a: 1}
   mPivot: 4
-  mWidth: 62
+  mWidth: 52
   mHeight: 50
   mDepth: 1
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.24000001
+  aspectRatio: 1.03999996
   keepCrispWhenShrunk: 2
   onChangeValue:
     mTarget: {fileID: 0}
@@ -2493,6 +2532,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1982319602}
   - 114: {fileID: 1982319603}
+  - 114: {fileID: 1982319604}
+  - 65: {fileID: 1982319605}
   m_Layer: 5
   m_Name: btn_roll_1
   m_TagString: Untagged
@@ -2548,7 +2589,7 @@ MonoBehaviour:
   mWidth: 170
   mHeight: 166
   mDepth: 0
-  autoResizeBoxCollider: 0
+  autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 1.02409637
@@ -2565,6 +2606,46 @@ MonoBehaviour:
   mAtlas: {fileID: 11496556, guid: aa5e2471ff0f2654e983dcae6489efb4, type: 2}
   mSpriteName: quay1
   mFillCenter: 1
+--- !u!114 &1982319604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1982319601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e862f287df53bb64db191162f851a296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onHoverOver: []
+  onHoverOut: []
+  onPress: []
+  onRelease: []
+  onSelect: []
+  onDeselect: []
+  onClick:
+  - mTarget: {fileID: 790657491}
+    mMethodName: APIRegisterNewUser
+    mParameters: []
+    oneShot: 0
+  onDoubleClick: []
+  onDragStart: []
+  onDragEnd: []
+  onDragOver: []
+  onDragOut: []
+  onDrag: []
+--- !u!65 &1982319605
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1982319601}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 170, y: 166, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1990388569
 GameObject:
   m_ObjectHideFlags: 0
