@@ -2,7 +2,7 @@
 using System.Collections;
 using strange.extensions.signal.impl;
 
-public class RequestManager : MonoBehaviour 
+public class RequestManager : MonoSingleton<RequestManager>
 {
     public string SERVER_URL = "http://23.251.156.209/public/v1/";
 
