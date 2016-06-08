@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using strange.extensions.mediation.impl;
+using nFury.Utils.Core;
 
-public class InterfaceView : MonoBehaviour {
+public class InterfaceView : View
+{
+    public GameObject btnSpin1;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    private void Awake()
+    {
+        UIEventListener.Get(btnSpin1).onClick += Spin1;
+    }
+
+    private void Spin1(GameObject o)
+    {
+        Service.Get<SignalManager>().sendAPIStartWheelSignal.Dispatch();
+    }
 }

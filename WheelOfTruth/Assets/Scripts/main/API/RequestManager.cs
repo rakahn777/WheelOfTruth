@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using strange.extensions.signal.impl;
+using nFury.Utils.Core;
 
 public class RequestManager : MonoSingleton<RequestManager>
 {
     public string SERVER_URL = "http://23.251.156.209/public/v1/";
-
-    //test
-    private string token;
 
     public void APIRegisterNewUser()
     {
@@ -21,10 +19,10 @@ public class RequestManager : MonoSingleton<RequestManager>
         form.AddField("phone_number", "0123456789");
         WWW www = new WWW(url, form);
 
-        StartCoroutine(WaitForRequest(www, null));
+        StartCoroutine(WaitForRequest(www, Service.Get<SignalManager>().onAPIRegisterNewUserSignal));
     }
 
-    public void APILoginEmail()
+    public void APILoginEmail(SendLoginEmail send)
     {
         string url = SERVER_URL + "users/auth";
 
@@ -37,10 +35,10 @@ public class RequestManager : MonoSingleton<RequestManager>
         
         Debug.Log(LitJson.JsonMapper.ToJson(form));
         
-        StartCoroutine(WaitForRequest(www, null));
+        StartCoroutine(WaitForRequest(www, Service.Get<SignalManager>().onAPILoginEmailSignal));
     }
 
-    public void APILogout()
+    public void APILogout(string token)
     {
         string url = SERVER_URL + "users/1/logout";
 
@@ -48,19 +46,18 @@ public class RequestManager : MonoSingleton<RequestManager>
         form.AddField("token", token);
         WWW www = new WWW(url, form);
 
-        StartCoroutine(WaitForRequest(www, null));
+        StartCoroutine(WaitForRequest(www, Service.Get<SignalManager>().onAPILogoutSignal));
     }
 
-    public void APIGetUserInfo()
+    public void APIGetUserInfo(string userID, string token)
     {
-        string url = SERVER_URL + "users/1/show?token=";
-        url += token;
+        string url = string.Format(SERVER_URL + "users/{0}/show?token={1}", userID, token);
         WWW www = new WWW(url);
 
-        StartCoroutine(WaitForRequest(www, null));
+        StartCoroutine(WaitForRequest(www, Service.Get<SignalManager>().onAPIGetUserInfoSignal));
     }
 
-    public void APIStartWheel()
+    public void APIStartWheel(string token)
     {
         string url = SERVER_URL + "wheels/start";
 
@@ -68,7 +65,7 @@ public class RequestManager : MonoSingleton<RequestManager>
         form.AddField("token", token);
         WWW www = new WWW(url, form);
 
-        StartCoroutine(WaitForRequest(www, null));
+        StartCoroutine(WaitForRequest(www, Service.Get<SignalManager>().onAPIStartWheelSignal));
     }
 
     private IEnumerator WaitForRequest(WWW www, Signal<string> signal)
@@ -78,11 +75,8 @@ public class RequestManager : MonoSingleton<RequestManager>
         if (www.error == null)
         {
             Debug.Log("WWW Ok!: " + www.text);
-            ResLogin res = LitJson.JsonMapper.ToObject<ResLogin>(www.text);
-            Debug.Log(res.key);
-            token = res.key;
 
-            //signal.Dispatch(www.text);
+            if (signal != null) signal.Dispatch(www.text);
         }
         else
         {
