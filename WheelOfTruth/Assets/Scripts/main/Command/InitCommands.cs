@@ -13,6 +13,7 @@ namespace cmds
         {
             signalManager.Initialization();
 
+            new ConfigManager();
             new UserData();
 
             Debug.Log("Inited Data Manager");

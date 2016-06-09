@@ -54,6 +54,10 @@ namespace cmds
             ResSpin res = JsonMapper.ToObject<ResSpin>(content);
 
             Debug.Log(JsonMapper.ToJson(res));
+
+            RewardInfo r = Service.Get<ConfigManager>().GetWheelConfig().GetReward(res.first_round.ToLower());
+            Debug.Log(JsonMapper.ToJson(r));
+
         }
     }
 }

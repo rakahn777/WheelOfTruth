@@ -4,6 +4,7 @@ using strange.extensions.context.impl;
 using strange.extensions.signal.impl;
 using signals;
 using cmds;
+using nFury.Utils.Core;
 
 public class MainContext : SignalContext 
 {
@@ -20,6 +21,9 @@ public class MainContext : SignalContext
         #region Injection
 
         injectionBinder.Bind<SignalManager>().ToSingleton().CrossContext();
+
+        ISerialization serialization = new JsonSerialization();
+        Service.Set<ISerialization>(serialization);
 
         #endregion
 
