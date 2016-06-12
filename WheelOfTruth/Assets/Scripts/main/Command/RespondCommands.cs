@@ -3,6 +3,7 @@ using System.Collections;
 using strange.extensions.command.impl;
 using LitJson;
 using nFury.Utils.Core;
+using signals;
 
 namespace cmds
 {
@@ -49,6 +50,9 @@ namespace cmds
 
     public class OnAPIStartWheelCmd : BaseOnAPISuccessCmd
     {
+        [Inject]
+        public SpinWheelSignal spinSignal { get; set; }
+
         public override void Execute()
         {
             ResSpin res = JsonMapper.ToObject<ResSpin>(content);
@@ -58,6 +62,7 @@ namespace cmds
             RewardInfo r = Service.Get<ConfigManager>().GetWheelConfig().GetReward(res.first_round.ToLower());
             Debug.Log(JsonMapper.ToJson(r));
 
+            spinSignal.Dispatch(new SpinWheelParameter(RoundType.FIRST, r));
         }
     }
 }

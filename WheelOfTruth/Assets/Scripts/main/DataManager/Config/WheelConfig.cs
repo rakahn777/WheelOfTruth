@@ -12,6 +12,17 @@ public class WheelConfig
         return results[key];
     }
 
+    public RewardInfo GetRewardById(int id)
+    {
+        foreach (RewardInfo r in results.Values)
+        {
+            if (id == r.id)
+                return r;
+        }
+
+        return null;
+    }
+
     public RoundRewardInfo[] GetRound(RoundType type)
     {
         List<RoundRewardInfo> _r = new List<RoundRewardInfo>();

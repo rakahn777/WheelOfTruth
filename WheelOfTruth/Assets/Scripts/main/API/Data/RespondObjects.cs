@@ -17,3 +17,15 @@ public class ResSpin
     public string second_round;
     public string third_round;
 }
+
+public class SpinWheelParameter
+{
+    public RoundType roundType;
+    public RewardInfo reward;
+
+    public SpinWheelParameter(RoundType type, RewardInfo reward)
+    {
+        this.roundType = type;
+        this.reward = reward;
+    }
+}

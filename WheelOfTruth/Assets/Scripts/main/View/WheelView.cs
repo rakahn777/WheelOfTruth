@@ -40,9 +40,9 @@ public class WheelView : MonoBehaviour
     }
 
     // Test
-    public void StartSpin()
+    public void StartSpin(int index)
     {
-        StartCoroutine(Roll(GetStep(GetAngle(3))));
+        StartCoroutine(Roll(GetStep(GetAngle(index))));
     }
 
     private int GetAngle(int index)
@@ -90,7 +90,7 @@ public class WheelView : MonoBehaviour
             if (curAngle >= 360)
                 curAngle = curAngle - 360;
 
-            wheelContainer.eulerAngles = new Vector3(0, curAngle, 0);
+            wheelContainer.eulerAngles = new Vector3(0, 0, -curAngle);
 
             yield return new WaitForSeconds(GetStepTime(step, totalStep));
 
@@ -101,7 +101,7 @@ public class WheelView : MonoBehaviour
         }
 
         curAngle = cacheTargetAngle;
-        wheelContainer.eulerAngles = new Vector3(0, curAngle, 0);
+        wheelContainer.eulerAngles = new Vector3(0, 0, -curAngle);
     }
 
     private float GetStepAngle(float step, int totalSteps)

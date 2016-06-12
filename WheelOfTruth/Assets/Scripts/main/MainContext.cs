@@ -20,10 +20,13 @@ public class MainContext : SignalContext
 
         #region Injection
 
-        injectionBinder.Bind<SignalManager>().ToSingleton().CrossContext();
+        injectionBinder.Bind<SignalManager>().ToSingleton();
 
         ISerialization serialization = new JsonSerialization();
         Service.Set<ISerialization>(serialization);
+
+        // Signals
+        injectionBinder.Bind<SpinWheelSignal>().ToSingleton();
 
         #endregion
 
@@ -46,6 +49,8 @@ public class MainContext : SignalContext
         commandBinder.Bind<OnAPIStartWheelSignal>().To<OnAPIStartWheelCmd>();
         
         #endregion
+
+        mediationBinder.Bind<RoundView>().To<RoundMediator>();
     }
 
     protected override void postBindings()
