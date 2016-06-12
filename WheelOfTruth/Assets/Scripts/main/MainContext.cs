@@ -51,6 +51,7 @@ public class MainContext : SignalContext
         #endregion
 
         mediationBinder.Bind<RoundView>().To<RoundMediator>();
+        mediationBinder.Bind<MachineControllerView>().To<MachineControllerMediator>();
     }
 
     protected override void postBindings()

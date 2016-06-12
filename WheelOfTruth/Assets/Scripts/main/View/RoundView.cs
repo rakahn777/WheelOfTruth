@@ -33,7 +33,7 @@ public class RoundView : View
         for (int i = 0; i < numberOfSlots; i++)
         {
             GameObject _slot = NGUITools.AddChild(container, prefab);
-            _slot.transform.Rotate(Vector3.forward, slotAngle * i);
+            _slot.transform.Rotate(Vector3.forward, -slotAngle * i);
             slotViews[i] = _slot.GetComponent<SlotView>();
         }
     }
@@ -60,7 +60,7 @@ public class RoundView : View
 
     public void SpinWheel(SpinWheelParameter param)
     {
-        if (param.roundType != type) return;
+        if (param.roundType != type || param.reward == null) return;
 
         int _index = 0;
         for (int i = 0; i < slotViews.Length; i++)

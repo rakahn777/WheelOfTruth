@@ -18,6 +18,13 @@ public class ResSpin
     public string third_round;
 }
 
+public class StartMachine
+{
+    public RewardInfo first;
+    public RewardInfo second;
+    public RewardInfo third;
+}
+
 public class SpinWheelParameter
 {
     public RoundType roundType;

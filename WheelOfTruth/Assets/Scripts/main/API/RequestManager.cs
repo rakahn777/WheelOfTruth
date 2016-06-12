@@ -63,6 +63,7 @@ public class RequestManager : MonoSingleton<RequestManager>
 
         WWWForm form = new WWWForm();
         form.AddField("token", token);
+        form.AddField("test", 2);
         WWW www = new WWW(url, form);
 
         StartCoroutine(WaitForRequest(www, Service.Get<SignalManager>().onAPIStartWheelSignal));

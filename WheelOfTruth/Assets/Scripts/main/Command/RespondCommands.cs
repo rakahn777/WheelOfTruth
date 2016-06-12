@@ -59,10 +59,15 @@ namespace cmds
 
             Debug.Log(JsonMapper.ToJson(res));
 
-            RewardInfo r = Service.Get<ConfigManager>().GetWheelConfig().GetReward(res.first_round.ToLower());
-            Debug.Log(JsonMapper.ToJson(r));
+            WheelConfig config = Service.Get<ConfigManager>().GetWheelConfig();
 
-            spinSignal.Dispatch(new SpinWheelParameter(RoundType.FIRST, r));
+            RewardInfo r1 = res.first_round != null ? config.GetReward(res.first_round.ToLower()) : null;
+            RewardInfo r2 = res.second_round != null ? config.GetReward(res.second_round.ToLower()) : null;
+            RewardInfo r3 = res.third_round != null ? config.GetReward(res.third_round.ToLower()) : null;
+
+            spinSignal.Dispatch(new SpinWheelParameter(RoundType.FIRST, r1));
+            spinSignal.Dispatch(new SpinWheelParameter(RoundType.SECOND, r2));
+            spinSignal.Dispatch(new SpinWheelParameter(RoundType.THIRD, r3));
         }
     }
 }

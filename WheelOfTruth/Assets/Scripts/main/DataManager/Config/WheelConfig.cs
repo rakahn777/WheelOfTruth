@@ -9,7 +9,9 @@ public class WheelConfig
     
     public RewardInfo GetReward(string key)
     {
-        return results[key];
+        RewardInfo r = null;
+        results.TryGetValue(key, out r);
+        return r;
     }
 
     public RewardInfo GetRewardById(int id)
