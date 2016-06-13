@@ -69,8 +69,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197788}
-  m_LocalRotation: {x: 0, y: 0, z: .552300811, w: .833644927}
-  m_LocalPosition: {x: -57, y: 25, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -.198769301, w: .980046332}
+  m_LocalPosition: {x: -52, y: 21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 497786}
@@ -181,13 +181,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 48
-  mHeight: 48
+  mWidth: 60
+  mHeight: 22
   mDepth: 11
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: 2.72727275
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -199,7 +199,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 11496556, guid: d663037994b2ea24fbab8ab825b497ad, type: 2}
-  mSpriteName: 3_gift
+  mSpriteName: jackpot
   mFillCenter: 1
 --- !u!114 &11497792
 MonoBehaviour:
@@ -244,8 +244,8 @@ MonoBehaviour:
     mMethodName: 
     mParameters: []
     oneShot: 0
-  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  mFont: {fileID: 0}
+  mTrueTypeFont: {fileID: 0}
+  mFont: {fileID: 11400000, guid: d0d5433ebec3a9d4abd59afd785939f2, type: 2}
   mText: 10000 exp
   mFontSize: 20
   mFontStyle: 0

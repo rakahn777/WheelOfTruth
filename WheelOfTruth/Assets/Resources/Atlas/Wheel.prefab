@@ -419,8 +419,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: arrow
-    x: 937
-    y: 867
+    x: 931
+    y: 874
     width: 48
     height: 112
     borderLeft: 0
@@ -445,8 +445,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: dead
-    x: 2
-    y: 984
+    x: 928
+    y: 988
     width: 32
     height: 30
     borderLeft: 0
@@ -458,10 +458,10 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: jackpot
-    x: 878
-    y: 977
-    width: 55
-    height: 41
+    x: 2
+    y: 984
+    width: 59
+    height: 21
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -471,10 +471,10 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: star
-    x: 846
-    y: 808
-    width: 23
-    height: 22
+    x: 878
+    y: 977
+    width: 48
+    height: 42
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -484,10 +484,10 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: up
-    x: 592
-    y: 624
-    width: 23
-    height: 20
+    x: 986
+    y: 405
+    width: 32
+    height: 46
     borderLeft: 0
     borderRight: 0
     borderTop: 0

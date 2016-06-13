@@ -200,7 +200,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":85,"h":61},
 	"sourceSize": {"w":85,"h":61}
 },
-"3_8.png":
+"3_7.png":
 {
 	"frame": {"x":790,"y":887,"w":85,"h":63},
 	"rotated": false,
@@ -234,7 +234,7 @@
 },
 "arrow.png":
 {
-	"frame": {"x":937,"y":867,"w":48,"h":112},
+	"frame": {"x":931,"y":874,"w":48,"h":112},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":112},
@@ -250,7 +250,7 @@
 },
 "dead.png":
 {
-	"frame": {"x":2,"y":984,"w":32,"h":30},
+	"frame": {"x":928,"y":988,"w":32,"h":30},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":30},
@@ -258,27 +258,27 @@
 },
 "jackpot.png":
 {
-	"frame": {"x":878,"y":977,"w":55,"h":41},
+	"frame": {"x":2,"y":984,"w":59,"h":21},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":55,"h":41},
-	"sourceSize": {"w":55,"h":41}
+	"spriteSourceSize": {"x":0,"y":0,"w":59,"h":21},
+	"sourceSize": {"w":59,"h":21}
 },
 "star.png":
 {
-	"frame": {"x":846,"y":808,"w":23,"h":22},
+	"frame": {"x":878,"y":977,"w":48,"h":42},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":23,"h":22},
-	"sourceSize": {"w":23,"h":22}
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42}
 },
 "up.png":
 {
-	"frame": {"x":592,"y":624,"w":23,"h":20},
+	"frame": {"x":986,"y":405,"w":32,"h":46},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":23,"h":20},
-	"sourceSize": {"w":23,"h":20}
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":46},
+	"sourceSize": {"w":32,"h":46}
 }},
 "meta": {
 	"app": "http://www.codeandweb.com/texturepacker ",
@@ -287,6 +287,6 @@
 	"format": "RGBA8888",
 	"size": {"w":1024,"h":1024},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:376beb3bd8548b6d48e458abe85405ef:6b03ad316c07d84d1e3ca00666b04b68:7b31ddcf94df1d5f8dda1c9511bae80b$"
+	"smartupdate": "$TexturePacker:SmartUpdate:dfb7906baf7e4f443cc0aff8a110d3f8:c4e8553415ae5ea238fcda25a145bdce:7b31ddcf94df1d5f8dda1c9511bae80b$"
 }
 }

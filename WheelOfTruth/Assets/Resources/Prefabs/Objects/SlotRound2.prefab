@@ -130,8 +130,8 @@ MonoBehaviour:
     mMethodName: 
     mParameters: []
     oneShot: 0
-  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  mFont: {fileID: 0}
+  mTrueTypeFont: {fileID: 0}
+  mFont: {fileID: 11400000, guid: d0d5433ebec3a9d4abd59afd785939f2, type: 2}
   mText: 10000 exp
   mFontSize: 20
   mFontStyle: 0
