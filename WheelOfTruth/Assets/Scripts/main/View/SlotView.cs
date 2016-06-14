@@ -38,11 +38,11 @@ public class SlotView : MonoBehaviour
                 break;
 
             case RewardType.MINI_GAME:
-                label.text = "Chơi";
+                label.text = "GAME";
                 break;
 
             case RewardType.MORE_TURN:
-                label.text = string.Format("Thêm {0} lượt", data.turn);
+                label.text = string.Format("+{0} TURN", data.turn);
                 break;
 
             case RewardType.STAR:
@@ -50,7 +50,7 @@ public class SlotView : MonoBehaviour
                 break;
 
             case RewardType.UP:
-                label.text = "Lên icon_up";
+                label.text = "UP icon_up";
                 break;
         }
     }
