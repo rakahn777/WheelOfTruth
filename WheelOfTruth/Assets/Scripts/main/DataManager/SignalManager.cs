@@ -30,6 +30,15 @@ public class SignalManager
 
     #endregion
 
+    #region UI
+
+    [Inject]
+    public SpinWheelSignal spinWheelSignal { get; set; }
+    [Inject]
+    public OnSpinFinishSignal onSpinFinishSignal { get; set; }
+
+    #endregion
+
     public void Initialization()
     {
         Service.Set(this);

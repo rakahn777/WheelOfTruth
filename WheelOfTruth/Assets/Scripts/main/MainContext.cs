@@ -26,7 +26,9 @@ public class MainContext : SignalContext
         Service.Set<ISerialization>(serialization);
 
         // Signals
+        injectionBinder.Bind<StartMachineSignal>().ToSingleton();
         injectionBinder.Bind<SpinWheelSignal>().ToSingleton();
+        injectionBinder.Bind<OnSpinFinishSignal>().ToSingleton();
 
         #endregion
 

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using strange.extensions.signal.impl;
 
 public class WheelView : MonoBehaviour 
 {
@@ -9,6 +10,9 @@ public class WheelView : MonoBehaviour
     public int minLap;
     public int maxLap;
     public float maxSpeed;
+
+    [HideInInspector]
+    public Signal finishSignal = new Signal();
 
     // Test
     public UILabel lb;
@@ -102,6 +106,8 @@ public class WheelView : MonoBehaviour
 
         curAngle = cacheTargetAngle;
         wheelContainer.localEulerAngles = new Vector3(0, 0, curAngle);
+
+        finishSignal.Dispatch();
     }
 
     private float GetStepAngle(float step, int totalSteps)

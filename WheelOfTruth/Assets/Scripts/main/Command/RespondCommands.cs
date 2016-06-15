@@ -51,7 +51,7 @@ namespace cmds
     public class OnAPIStartWheelCmd : BaseOnAPISuccessCmd
     {
         [Inject]
-        public SpinWheelSignal spinSignal { get; set; }
+        public StartMachineSignal startSignal { get; set; }
 
         public override void Execute()
         {
@@ -65,9 +65,7 @@ namespace cmds
             RewardInfo r2 = res.second_round != null ? config.GetReward(res.second_round.ToLower()) : null;
             RewardInfo r3 = res.third_round != null ? config.GetReward(res.third_round.ToLower()) : null;
 
-            spinSignal.Dispatch(new SpinWheelParameter(RoundType.FIRST, r1));
-            spinSignal.Dispatch(new SpinWheelParameter(RoundType.SECOND, r2));
-            spinSignal.Dispatch(new SpinWheelParameter(RoundType.THIRD, r3));
+            startSignal.Dispatch(new StartMachine(new RewardInfo[] { r1, r2, r3 }));
         }
     }
 }

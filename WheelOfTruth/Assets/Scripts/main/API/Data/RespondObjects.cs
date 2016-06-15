@@ -20,9 +20,12 @@ public class ResSpin
 
 public class StartMachine
 {
-    public RewardInfo first;
-    public RewardInfo second;
-    public RewardInfo third;
+    public RewardInfo[] rewards;
+
+    public StartMachine(RewardInfo[] r)
+    {
+        this.rewards = r;
+    }
 }
 
 public class SpinWheelParameter

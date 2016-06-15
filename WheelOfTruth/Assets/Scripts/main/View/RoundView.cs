@@ -2,6 +2,7 @@
 using System.Collections;
 using nFury.Utils.Core;
 using strange.extensions.mediation.impl;
+using System.Collections.Generic;
 
 public class RoundView : View 
 {
@@ -19,9 +20,15 @@ public class RoundView : View
         slotAngle = 360f / numberOfSlots;
 
         wheel = gameObject.GetComponent<WheelView>();
+        wheel.finishSignal.AddListener(OnFinishSpin);
 
         GenerateSlots();
         InitData();
+    }
+
+    private void OnDestroy()
+    {
+        wheel.finishSignal.RemoveListener(OnFinishSpin);
     }
 
     private void GenerateSlots()
@@ -63,15 +70,21 @@ public class RoundView : View
         if (param.roundType != type || param.reward == null) return;
 
         int _index = 0;
+        List<int> matchedSlots = new List<int>();
         for (int i = 0; i < slotViews.Length; i++)
         {
             if (slotViews[i].GetRewardId() == param.reward.id)
             {
-                _index = i;
+                matchedSlots.Add(i);
                 break;
             }
         }
-
+        _index = matchedSlots[Random.Range(0, matchedSlots.Count)];
         wheel.StartSpin(_index);
+    }
+
+    private void OnFinishSpin()
+    {
+        Service.Get<SignalManager>().onSpinFinishSignal.Dispatch(type);
     }
 }
