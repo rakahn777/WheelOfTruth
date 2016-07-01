@@ -18,9 +18,12 @@ namespace cmds
 
     public class SendAPIStartWheelCmd : Command
     {
+        [Inject]
+        public SendStartWheel send { get; set; }
+
         public override void Execute()
         {
-            RequestManager.instance.APIStartWheel(Service.Get<UserData>().session.key);
+            RequestManager.instance.APIStartWheel(send.token, send.from);
         }
     }
 }

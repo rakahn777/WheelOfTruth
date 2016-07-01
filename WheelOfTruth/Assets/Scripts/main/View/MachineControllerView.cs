@@ -29,7 +29,7 @@ public class MachineControllerView : View
             {
                 NGUITools.SetActive(objBlock, true);
 
-                stars -= 1000;
+                stars -= (int)(1000 * Mathf.Pow(10, i));
                 starLb.text = stars + "icon_star";
 
                 roundIndex = i;

@@ -8,5 +8,5 @@ namespace signals
     public class SendAPILoginEmailSignal : Signal<SendLoginEmail> { }
     public class SendAPILogoutSignal : Signal { }
     public class SendAPIGetUserInfoSignal : Signal { }
-    public class SendAPIStartWheelSignal : Signal { }
+    public class SendAPIStartWheelSignal : Signal<SendStartWheel> { }
 }

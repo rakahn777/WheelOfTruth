@@ -57,12 +57,13 @@ public class RequestManager : MonoSingleton<RequestManager>
         StartCoroutine(WaitForRequest(www, Service.Get<SignalManager>().onAPIGetUserInfoSignal));
     }
 
-    public void APIStartWheel(string token)
+    public void APIStartWheel(string token, int from)
     {
         string url = SERVER_URL + "wheels/start";
 
         WWWForm form = new WWWForm();
         form.AddField("token", token);
+        form.AddField("paid", from);
         //form.AddField("test", 2);
         WWW www = new WWW(url, form);
 
